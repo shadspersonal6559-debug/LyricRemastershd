@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+[build.environment]
+  GEMINI_API_KEY = "AIzaSyBM06B567nV9yN-Q8NrqLCvT7sCcIuqLlE"
+  
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

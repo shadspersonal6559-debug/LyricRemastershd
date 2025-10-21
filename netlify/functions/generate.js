@@ -1,7 +1,5 @@
-﻿// Netlify Function to securely proxy the request to the Gemini API
+// Netlify Function to securely proxy the request to the Gemini API
 // This function needs to be installed in netlify/functions/generate.js
-
-const fetch = require('node-fetch');
 
 // The Gemini API key will be automatically loaded from Netlify Environment Variables
 // You MUST set an environment variable named GEMINI_API_KEY in your Netlify settings.

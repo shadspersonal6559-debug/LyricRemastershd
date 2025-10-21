@@ -250,8 +250,7 @@
         lucide.createIcons();
 
         // --- Global Variables and Constants ---
-        const API_KEY = ""; // Keep empty: Netlify provides the key via environment variables or context if configured.
-        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
+        const API_URL = "/.netlify/functions/generate";
         const MAX_RETRIES = 3;
 
         // --- DOM Elements ---
@@ -298,7 +297,6 @@
         };
 
         const fetchWithRetry = async (payload, retryCount = 0) => {
-            // Netlify-specific: The environment will inject the API key through the runtime environment for the fetch call.
             const delay = Math.pow(2, retryCount) * 1000 + (Math.random() * 1000); 
             
             try {
@@ -306,7 +304,7 @@
                     await new Promise(resolve => setTimeout(resolve, delay));
                 }
 
-                const response = await fetch(`${API_URL}?key=${API_KEY}`, {
+                const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
