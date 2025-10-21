@@ -1,0 +1,12 @@
+﻿{
+  "name": "lyric-generator-project",
+  "version": "1.0.0",
+  "description": "AI Lyric Generator with Netlify Function",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1" 
+    // Note: Use node-fetch v2 for 'require()' syntax or update to v3/use native fetch 
+    // if running Node 18+ and using ESM 'import' syntax. 
+    // Netlify often works best with v2 using 'require()'.
+  }
+}
